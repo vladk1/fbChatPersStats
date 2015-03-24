@@ -1,0 +1,11 @@
+src/files/datef/*
+src/files/fbmessages/*
+src/files/similarity/*
+src/files/tags/*
+src/files/tfidf/*
+
+out/production/fbChatv2/files/fbmessages/*
+out/production/fbChatv2/files/tags/*
+out/production/fbChatv2/files/time_frequency/*
+out/production/fbChatv2/files/tfidf/texts/*
+out/production/fbChatv2/files/tfidf/jsons/*
