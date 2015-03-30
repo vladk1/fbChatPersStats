@@ -24,6 +24,12 @@ most frequent tags in all conversation
 - **/src/files/similarity**
 similarity of all people in your conversation between each other
 
+developed by EastSide team:
+[jmedvesek](https://github.com/jmedvesek)
+[ppalasek](https://github.com/ppalasek)
+[vladk1](https://github.com/vladk1)
+
+
 
 
 
