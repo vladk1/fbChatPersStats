@@ -23,7 +23,6 @@ public class WordFilter {
             return false;
         }
 
-
         return true;
     }
 

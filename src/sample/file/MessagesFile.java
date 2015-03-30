@@ -2,10 +2,7 @@ package sample.file;
 
 
 import org.json.simple.JSONObject;
-import sample.NLP;
 import sample.Populator;
-import sample.beams.UserMessage;
-
 import java.io.*;
 import java.util.*;
 
@@ -53,6 +50,12 @@ public class MessagesFile {
         String filePath = FilePathDir.getSimilarityFilePath(chatTitle);
         File messagesFile = createFile(filePath);
         Populator.populateFile(sentences, messagesFile);
+    }
+    
+    public void createSimilarityJsonFile(String chatTitle, JSONObject jsonObject) {
+        String filePath = FilePathDir.getSimilarityJsonFilePath(chatTitle);
+        File messagesFile = createFile(filePath);
+        Populator.populateJSONFile(jsonObject, messagesFile);
     }
 
     private File createFile(String filePath) {

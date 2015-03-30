@@ -9,3 +9,4 @@ out/production/fbChatv2/files/tags/*
 out/production/fbChatv2/files/time_frequency/*
 out/production/fbChatv2/files/tfidf/texts/*
 out/production/fbChatv2/files/tfidf/jsons/*
+/bin/

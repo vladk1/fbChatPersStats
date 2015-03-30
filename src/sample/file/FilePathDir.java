@@ -58,6 +58,13 @@ public class FilePathDir {
         String relativePath = "src"+fileSeparator+"files"+fileSeparator+"similarity"+fileSeparator+"texts"+fileSeparator+goodTitle+".csv";
         return relativePath;
     }
+    
+    public static String getSimilarityJsonFilePath(String chatTitle) {
+        String fileSeparator = System.getProperty("file.separator");
+        String goodTitle = StringUtills.beautifyTitle(chatTitle);
+        String relativePath = "src"+fileSeparator+"files"+fileSeparator+"similarity"+fileSeparator+"jsons"+fileSeparator+goodTitle+".json";
+        return relativePath;
+    }
 
 
 

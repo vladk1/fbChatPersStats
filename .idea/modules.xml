@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/fbChatv2.iml" filepath="$PROJECT_DIR$/fbChatv2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fbChatPersStats.iml" filepath="$PROJECT_DIR$/fbChatPersStats.iml" />
     </modules>
   </component>
 </project>

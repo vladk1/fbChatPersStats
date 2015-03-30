@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class SimilarityGenerator {
 
     public void generateFiles(String files) {
+    	System.out.println("Generate similarity files \n");
         StringSimilarity stringSimilarity = new StringSimilarity();
         MessagesFile messagesFile = new MessagesFile();
 
@@ -87,7 +88,42 @@ public class SimilarityGenerator {
         }
 
         messagesFile.createSimilarityFile("similatity", reversedStringList);
+       
         messagesFile.createSimilarityFile("simnames", filenames);
+        
+        messagesFile.createSimilarityJsonFile("similatity", getJson(reversedStringList, filenames));
+    }
+    
+    
+    private JSONObject getJson(ArrayList<String> similarityRatio, ArrayList<String> filenames) {
+		
+    	JSONObject mainJson = new JSONObject();
+    	JSONArray mainJsonArray = new JSONArray();
+    	int nameCount = 0;
+    	
+    	for(String value : similarityRatio) {
+//    		System.out.println(value);
+    		String[] ratioArray = value.split(", ");
+    		JSONObject eachJson = new JSONObject();
+    		JSONArray ratioJsonArray = new JSONArray();
+    		
+    		String name = filenames.get(nameCount);
+    		eachJson.put("name", name);
+    		
+    		for (String eachRatio : ratioArray) {
+    			ratioJsonArray.add(eachRatio);
+    		}
+    		eachJson.put("ratioArray", ratioJsonArray);
+    		
+    		mainJsonArray.add(eachJson);
+    		nameCount++;
+    	}
+    	mainJson.put("nodes", mainJsonArray);
+    	
+    	System.out.println("mainJson="+mainJson);
+    		
+    	return mainJson;
+    	
     }
 
 

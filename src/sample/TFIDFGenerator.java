@@ -32,10 +32,8 @@ public class TFIDFGenerator {
                 String key = (String)iterator.next();
                 Double value = (Double) sortedChatTFIDFHashMap.get(key);
                 if (value > MIN_TFIDF_VALUE) {
-
                     wordQueue.add(key);
                     ratioQueue.add((Double) sortedChatTFIDFHashMap.get(key));
-//                    fileText.add(key + "        " + sortedChatTFIDFHashMap.get(key));
                 }
                 counter++;
             }

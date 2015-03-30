@@ -6,10 +6,6 @@ import org.jsoup.nodes.TextNode;
 import sample.beams.Chat;
 import sample.beams.UserMessage;
 import sample.file.FileParse;
-import sample.utills.StringSimilarity;
-
-
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -20,11 +16,7 @@ import static sample.filters.ChatTitleFilter.*;
 
 public class Main {
 
-    private static final String MARTIN = "Martin Lazarov, Vlad Kolesnyk";
-    private static final String NICOLA = "Vlad Kolesnyk, Nicola Greco";
-    private static final String TIM = "Vlad Kolesnyk, Tim McPhie";
-
-    private static String[] chatTitleArray = { MARTIN, NICOLA, TIM };
+    private static String[] chatTitleArray = { };
     private TFIDFCounter tfidfCounter = new TFIDFCounter();
 
 
@@ -114,7 +106,6 @@ public class Main {
 
 
     private List<Node> extractChatListFromTitle(List<Node> chatThreads, String chatSearchTitle) {
-//        System.out.println("start extract chat with title "+chatSearchTitle);
         for (Node eachChatThreadNode : chatThreads) {
             List<Node> messageNodes = eachChatThreadNode.childNodes();
             TextNode chatThreadTitleTextNode = (TextNode) messageNodes.get(0);
@@ -124,7 +115,6 @@ public class Main {
                 return messageNodes;
             }
         }
-
         return null;
     }
 
@@ -133,7 +123,6 @@ public class Main {
 
     private Chat createNewChat(String chatTitle, List<Node> messageNodes) {
         System.out.println("New Chat " + chatTitle);
-
         Chat newChat = new Chat(chatTitle);
         ArrayList<UserMessage> userMessages = FormatTranslator.fbMessageThreadsToSentence(messageNodes);
         newChat.setUserMessages(userMessages);

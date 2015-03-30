@@ -1,21 +1,12 @@
 package sample;
 
 
-import opennlp.tools.cmdline.parser.ParserTool;
-import opennlp.tools.parser.Parse;
-import opennlp.tools.parser.Parser;
-import opennlp.tools.parser.ParserFactory;
-import opennlp.tools.parser.ParserModel;
-import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.InvalidFormatException;
-import sample.utills.StringUtills;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class OpenNLP {
@@ -25,13 +16,10 @@ public class OpenNLP {
     private TokenizerModel model = null;
 
     public OpenNLP() {
-
         try {
-            is = new FileInputStream("en-token.bin");
-            model = new TokenizerModel(is);
-
-            tokenizer = new TokenizerME(model);
-
+          is = new FileInputStream("en-token.bin");
+          model = new TokenizerModel(is);
+          tokenizer = new TokenizerME(model);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (InvalidFormatException e) {
@@ -39,8 +27,6 @@ public class OpenNLP {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void closeTokinizerIs() {
@@ -51,17 +37,13 @@ public class OpenNLP {
         }
     }
 
-
     public Object[] tokenize(String sentence) {
        ArrayList<String> outputArray = new ArrayList<String>();
-
-            String tokens[] = tokenizer.tokenize(sentence);
-
-            for (String wordToken : tokens) {
-                    outputArray.add(wordToken.toLowerCase());
-            }
-
-            return outputArray.toArray();
+       String tokens[] = tokenizer.tokenize(sentence);
+       for (String wordToken : tokens) {
+         outputArray.add(wordToken.toLowerCase());
+       }
+       return outputArray.toArray();
     }
 
 

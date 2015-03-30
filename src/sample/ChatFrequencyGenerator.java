@@ -2,7 +2,6 @@ package sample;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import sample.beams.Chat;
 import sample.beams.UserMessage;

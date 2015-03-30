@@ -77,7 +77,7 @@ public class FormatTranslator {
                 if (comp1.equals(comp2)){
                     passedMap.remove(key);
                     mapKeys.remove(key);
-                    sortedMap.put((String)key, (Double)val);
+                    sortedMap.put(key, val);
                     break;
                 }
 
@@ -110,7 +110,7 @@ public class FormatTranslator {
                 if (comp1.equals(comp2)){
                     passedMap.remove(key);
                     mapKeys.remove(key);
-                    sortedMap.put((String)key, (Integer)val);
+                    sortedMap.put(key, val);
                     break;
                 }
 
